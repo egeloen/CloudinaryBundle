@@ -45,6 +45,9 @@ class Configuration implements ConfigurationInterface
                         ->end()
                     ->end()
                 ->end()
+                ->arrayNode('options')
+                    ->prototype('variable')->end()
+                ->end()
         ;
 
         return $treeBuilder;

@@ -43,10 +43,13 @@ class Speicher210CloudinaryExtension extends ConfigurableExtension
             ->getDefinition('speicher210_cloudinary.cloudinary')
             ->replaceArgument(
                 0,
-                array(
-                    'cloud_name' => $config['cloud_name'],
-                    'api_key' => $config['access_identifier']['api_key'],
-                    'api_secret' => $config['access_identifier']['api_secret'],
+                array_merge(
+                    $config['options'],
+                    array(
+                        'cloud_name' => $config['cloud_name'],
+                        'api_key' => $config['access_identifier']['api_key'],
+                        'api_secret' => $config['access_identifier']['api_secret'],
+                    )
                 )
             );
     }
